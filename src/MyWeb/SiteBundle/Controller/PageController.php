@@ -4,6 +4,8 @@
 namespace MyWeb\SiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\SecurityContext;
 use MyWeb\SiteBundle\Entity\Enquiry;
 use MyWeb\SiteBundle\Form\EnquiryType;
 use Symfony\Component\HttpFoundation\Response;
@@ -45,16 +47,33 @@ class PageController extends Controller
         ));
     }
 
-    public function loginAction()
+    public function loginAction(Request $request)
     {
-        return $this->render('MyWebSiteBundle:Page:login.html.twig');
+        $session = $request->getSession();
+
+        // get the login error if there is one
+        if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
+            $error = $request->attributes->get(
+                SecurityContext::AUTHENTICATION_ERROR
+            );
+        } else {
+            $error = $session->get(SecurityContext::AUTHENTICATION_ERROR);
+            $session->remove(SecurityContext::AUTHENTICATION_ERROR);
+        }
+
+        return $this->render(
+            'MyWebSiteBundle:Page:login.html.twig',
+            array(
+                // last username entered by the user
+                'last_username' => $session->get(SecurityContext::LAST_USERNAME),
+                'error'         => $error,
+            )
+        );
     }
 
     public function adminAction()
     {
         $enquiry = $this->getDoctrine()->getRepository('MyWebSiteBundle:Enquiry')->findAll();
-        //$products = $repository->findAll();
-        //    ->find($email);
 
         if (!$enquiry) {
             throw $this->createNotFoundException(

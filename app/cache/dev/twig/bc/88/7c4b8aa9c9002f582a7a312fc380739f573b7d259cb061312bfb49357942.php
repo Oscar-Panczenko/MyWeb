@@ -34,13 +34,13 @@ class __TwigTemplate_bc887c4b8aa9c9002f582a7a312fc380739f573b7d259cb061312bfb493
         ";
         // line 6
         $this->displayBlock('body', $context, $blocks);
-        // line 12
+        // line 31
         echo "    </section>
     <aside class=\"sidebar\">
         ";
-        // line 14
+        // line 33
         $this->displayBlock('sidebar', $context, $blocks);
-        // line 15
+        // line 34
         echo "    </aside>
 ";
     }
@@ -49,14 +49,45 @@ class __TwigTemplate_bc887c4b8aa9c9002f582a7a312fc380739f573b7d259cb061312bfb493
     public function block_body($context, array $blocks = array())
     {
         // line 7
-        echo "        <header>
-            <h1>Login</h1>
-        </header>
-        <h1>Under construction. </h>
+        echo "            ";
+        if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
+            // line 8
+            echo "                <div>";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "message"), "html", null, true);
+            echo "</div>
+            ";
+        }
+        // line 10
+        echo "
+            <form action=\"";
+        // line 11
+        echo $this->env->getExtension('routing')->getPath("login_check");
+        echo "\" method=\"post\">
+                <label for=\"username\">Username:</label>
+                <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
+        // line 13
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
+        echo "\" />
+
+                <label for=\"password\">Password:</label>
+                <input type=\"password\" id=\"password\" name=\"_password\" />
+
+                <input type=\"hidden\" name=\"_csrf_token\" value=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->env->getExtension('form')->renderer->renderCsrfToken("authenticate"), "html", null, true);
+        echo "\">
+
+                <input type=\"hidden\" name=\"acme_security_admin\" value=\"account\" />
+
+                ";
+        // line 27
+        echo "
+                <button type=\"submit\">login</button>
+            </form>
         ";
     }
 
-    // line 14
+    // line 33
     public function block_sidebar($context, array $blocks = array())
     {
         echo "Side Bar";
@@ -74,6 +105,6 @@ class __TwigTemplate_bc887c4b8aa9c9002f582a7a312fc380739f573b7d259cb061312bfb493
 
     public function getDebugInfo()
     {
-        return array (  60 => 14,  52 => 7,  49 => 6,  44 => 15,  42 => 14,  38 => 12,  36 => 6,  33 => 5,  30 => 4,);
+        return array (  91 => 33,  84 => 27,  77 => 18,  69 => 13,  64 => 11,  61 => 10,  55 => 8,  52 => 7,  49 => 6,  44 => 34,  42 => 33,  38 => 31,  36 => 6,  33 => 5,  30 => 4,);
     }
 }

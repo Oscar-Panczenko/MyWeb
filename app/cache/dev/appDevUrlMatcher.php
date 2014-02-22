@@ -152,14 +152,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // my_web_site_login
         if ($pathinfo === '/login') {
-            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'HEAD'));
-                goto not_my_web_site_login;
-            }
-
             return array (  '_controller' => 'MyWeb\\SiteBundle\\Controller\\PageController::loginAction',  '_route' => 'my_web_site_login',);
         }
-        not_my_web_site_login:
 
         // my_web_site_admin
         if ($pathinfo === '/admin') {
@@ -171,6 +165,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'MyWeb\\SiteBundle\\Controller\\PageController::adminAction',  '_route' => 'my_web_site_admin',);
         }
         not_my_web_site_admin:
+
+        if (0 === strpos($pathinfo, '/log')) {
+            // login_check
+            if ($pathinfo === '/login_check') {
+                return array('_route' => 'login_check');
+            }
+
+            // logout
+            if ($pathinfo === '/logout') {
+                return array('_route' => 'logout');
+            }
+
+        }
 
         // _welcome
         if (rtrim($pathinfo, '/') === '') {

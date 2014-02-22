@@ -16,5 +16,15 @@ my_web_site_admin:
     requirements:
         _method:  GET
 
+my_web_site_login:
+    path:     /login
+    defaults: { _controller: MyWebSiteBundle:Page:login }
+
+login_check:
+    path: /login_check
+
+logout:
+    path:   /logout
+
 
 

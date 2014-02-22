@@ -1,6 +1,16 @@
 {# src/MyWeb/SiteBundle/Resources/views/Page/admin.html.twig #}
 {% extends 'MyWebSiteBundle::layout.html.twig' %}
 
+{% block navigation %}
+    <nav>
+        <ul class="navigation">
+            <li><a href="{{ path('my_web_site_homepage') }}">Home</a></li>
+            <li><a href="{{ path('my_web_site_admin') }}">Admin</a></li>
+            <li><a href="{{ path('logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+
 {%  block content %}
     <section class="main-col">
         {% block body %}
