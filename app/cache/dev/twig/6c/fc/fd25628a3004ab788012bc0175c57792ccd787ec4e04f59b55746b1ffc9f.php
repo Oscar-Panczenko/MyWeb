@@ -58,13 +58,13 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
         ";
         // line 16
         $this->displayBlock('body', $context, $blocks);
-        // line 25
+        // line 34
         echo "    </section>
     <aside class=\"sidebar\">
         ";
-        // line 27
+        // line 36
         $this->displayBlock('sidebar', $context, $blocks);
-        // line 28
+        // line 37
         echo "    </aside>
 ";
     }
@@ -73,36 +73,47 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
     public function block_body($context, array $blocks = array())
     {
         // line 17
-        echo "
-            ";
-        // line 18
+        echo "            <section id=\"data\">
+                <table border=\"1\" style=\"width:700px\">
+                    <tr>
+                        <th align=\"center\">Email</th>
+                        <th align=\"center\">Body</th>
+                    </tr>
+                ";
+        // line 23
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["object"]) ? $context["object"] : $this->getContext($context, "object")));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 19
-            echo "                ";
+            // line 24
+            echo "                    <tr>
+                        <td>";
+            // line 25
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "email"), "html", null, true);
-            echo " - ";
+            echo "</td>
+                        <td>";
+            // line 26
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "body"), "html", null, true);
-            echo " <br>
-            ";
+            echo "</td>
+                    </tr>
+                ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 21
-            echo "                <h2>Aoutch ! No data !</h2>
-            ";
+            // line 29
+            echo "                    <h2>Aoutch ! No data !</h2>
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 23
-        echo "
+        // line 31
+        echo "                </table>
+            </section>
         ";
     }
 
-    // line 27
+    // line 36
     public function block_sidebar($context, array $blocks = array())
     {
         echo "Side Bar";
@@ -120,6 +131,6 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
 
     public function getDebugInfo()
     {
-        return array (  106 => 27,  101 => 23,  94 => 21,  84 => 19,  79 => 18,  76 => 17,  73 => 16,  68 => 28,  66 => 27,  62 => 25,  60 => 16,  57 => 15,  54 => 14,  46 => 9,  42 => 8,  38 => 7,  34 => 5,  31 => 4,);
+        return array (  117 => 36,  111 => 31,  104 => 29,  96 => 26,  92 => 25,  89 => 24,  84 => 23,  76 => 17,  73 => 16,  68 => 37,  66 => 36,  62 => 34,  60 => 16,  57 => 15,  54 => 14,  46 => 9,  42 => 8,  38 => 7,  34 => 5,  31 => 4,);
     }
 }

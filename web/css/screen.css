@@ -39,3 +39,4 @@ body {background-image:url(.../bundles/mywebsite/images/oscar.jpg);}
 
 #footer { font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-top: 1px solid #ccc; clear: both; text-align: center; padding: 10px; color: #aaa; }
 
+#data table, th, td { padding:5px; border: 1;}
