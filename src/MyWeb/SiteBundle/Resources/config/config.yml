@@ -1,0 +1,4 @@
+# src/MyWeb/SiteBundle/Resources/config/config.yml
+parameters:
+    # MyWeb contact email address
+    myweb_site.emails.contact_email: oscar.panczenko.web@gmail.com

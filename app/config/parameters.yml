@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: messages
+    database_user: oscar
+    database_password: azuno
+    mailer_transport: gmail
+    mailer_host: smtp.gmail.com
+    mailer_user: oscar.panczenko.web
+    mailer_password: azuno182
+    locale: en
+    secret: ThisTokenIsNotSoSecretChangeIt
