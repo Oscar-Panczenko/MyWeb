@@ -54,40 +54,40 @@ class __TwigTemplate_bad54ac7f38b3dc3f368c0bad23c98adb13f0a13a6b36b51c20bdc968d0
                     ";
         // line 22
         $this->displayBlock('navigation', $context, $blocks);
-        // line 31
+        // line 30
         echo "                </div>
             </header>
 
             <section id=\"front\">
             <hgroup>
                 <!--<h2>";
-        // line 36
+        // line 35
         $this->displayBlock('blog_title', $context, $blocks);
         echo "</h2>-->
                 <h2>";
-        // line 37
+        // line 36
         $this->displayBlock('blog_tagline', $context, $blocks);
         echo "</h3>
             </hgroup>
             </section>
 
             ";
-        // line 41
+        // line 40
         $this->displayBlock('content', $context, $blocks);
-        // line 45
+        // line 44
         echo "
             <div id=\"footer\">
                 ";
-        // line 47
+        // line 46
         $this->displayBlock('footer', $context, $blocks);
-        // line 50
+        // line 49
         echo "            </div>
         </section>
 
         ";
-        // line 53
+        // line 52
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 54
+        // line 53
         echo "    </body>
 </html>
 ";
@@ -120,14 +120,10 @@ class __TwigTemplate_bad54ac7f38b3dc3f368c0bad23c98adb13f0a13a6b36b51c20bdc968d0
                             <ul class=\"navigation\">
                                 <li><a href=\"";
         // line 25
-        echo $this->env->getExtension('routing')->getPath("my_web_site_homepage");
-        echo "\">Home</a></li>
-                                <li><a href=\"";
-        // line 26
         echo $this->env->getExtension('routing')->getPath("my_web_site_admin");
         echo "\">Admin</a></li>
 \t\t\t\t                <li><a href=\"";
-        // line 27
+        // line 26
         echo $this->env->getExtension('routing')->getPath("my_web_site_login");
         echo "\">Login</a></li>
                             </ul>
@@ -135,50 +131,50 @@ class __TwigTemplate_bad54ac7f38b3dc3f368c0bad23c98adb13f0a13a6b36b51c20bdc968d0
                     ";
     }
 
-    // line 36
+    // line 35
     public function block_blog_title($context, array $blocks = array())
     {
         echo "Engineer+Developer+Designer";
     }
 
-    // line 37
+    // line 36
     public function block_blog_tagline($context, array $blocks = array())
     {
         echo "Welcome to my Demo Site.";
     }
 
-    // line 41
+    // line 40
     public function block_content($context, array $blocks = array())
     {
-        // line 42
+        // line 41
         echo "            ";
         $this->displayBlock('body', $context, $blocks);
-        // line 43
+        // line 42
         echo "            ";
         $this->displayBlock('sidebar', $context, $blocks);
-        // line 44
+        // line 43
         echo "            ";
     }
 
-    // line 42
+    // line 41
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 43
+    // line 42
     public function block_sidebar($context, array $blocks = array())
     {
     }
 
-    // line 47
+    // line 46
     public function block_footer($context, array $blocks = array())
     {
-        // line 48
+        // line 47
         echo "                   Created by Oscar Hernandez
                 ";
     }
 
-    // line 53
+    // line 52
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -195,6 +191,6 @@ class __TwigTemplate_bad54ac7f38b3dc3f368c0bad23c98adb13f0a13a6b36b51c20bdc968d0
 
     public function getDebugInfo()
     {
-        return array (  182 => 53,  177 => 48,  174 => 47,  169 => 43,  164 => 42,  160 => 44,  157 => 43,  154 => 42,  151 => 41,  145 => 37,  139 => 36,  131 => 27,  127 => 26,  123 => 25,  119 => 23,  116 => 22,  110 => 13,  106 => 11,  103 => 10,  97 => 6,  91 => 54,  89 => 53,  84 => 50,  78 => 45,  76 => 41,  69 => 37,  65 => 36,  58 => 31,  56 => 22,  45 => 15,  43 => 10,  37 => 6,  32 => 5,  29 => 1,  82 => 47,  77 => 13,  70 => 11,  60 => 9,  55 => 8,  52 => 7,  49 => 6,  44 => 18,  42 => 17,  38 => 15,  36 => 6,  33 => 5,  30 => 4,);
+        return array (  178 => 52,  173 => 47,  170 => 46,  165 => 42,  160 => 41,  156 => 43,  153 => 42,  150 => 41,  147 => 40,  141 => 36,  135 => 35,  127 => 26,  123 => 25,  119 => 23,  116 => 22,  110 => 13,  106 => 11,  103 => 10,  97 => 6,  91 => 53,  89 => 52,  84 => 49,  82 => 46,  78 => 44,  76 => 40,  69 => 36,  65 => 35,  58 => 30,  56 => 22,  45 => 15,  43 => 10,  36 => 6,  29 => 1,);
     }
 }

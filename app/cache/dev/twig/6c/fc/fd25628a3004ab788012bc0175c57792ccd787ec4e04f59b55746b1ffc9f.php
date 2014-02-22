@@ -39,10 +39,6 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
         echo "\">Home</a></li>
             <li><a href=\"";
         // line 8
-        echo $this->env->getExtension('routing')->getPath("my_web_site_admin");
-        echo "\">Admin</a></li>
-            <li><a href=\"";
-        // line 9
         echo $this->env->getExtension('routing')->getPath("logout");
         echo "\">Logout</a></li>
         </ul>
@@ -50,49 +46,49 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
 ";
     }
 
-    // line 14
+    // line 13
     public function block_content($context, array $blocks = array())
     {
-        // line 15
+        // line 14
         echo "    <section class=\"main-col\">
         ";
-        // line 16
+        // line 15
         $this->displayBlock('body', $context, $blocks);
-        // line 34
+        // line 33
         echo "    </section>
     <aside class=\"sidebar\">
         ";
-        // line 36
+        // line 35
         $this->displayBlock('sidebar', $context, $blocks);
-        // line 37
+        // line 39
         echo "    </aside>
 ";
     }
 
-    // line 16
+    // line 15
     public function block_body($context, array $blocks = array())
     {
-        // line 17
+        // line 16
         echo "            <section id=\"data\">
-                <table border=\"1\" style=\"width:700px\">
+                <table border=\"1px\" style=\"width:700px\">
                     <tr>
-                        <th align=\"center\">Email</th>
-                        <th align=\"center\">Body</th>
+                        <th align=\"center\" bgcolor=\"#CCC\">Email</th>
+                        <th align=\"center\" bgcolor=\"#CCC\">Body</th>
                     </tr>
                 ";
-        // line 23
+        // line 22
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["object"]) ? $context["object"] : $this->getContext($context, "object")));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 24
+            // line 23
             echo "                    <tr>
                         <td>";
-            // line 25
+            // line 24
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "email"), "html", null, true);
             echo "</td>
                         <td>";
-            // line 26
+            // line 25
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "body"), "html", null, true);
             echo "</td>
                     </tr>
@@ -100,23 +96,26 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 29
+            // line 28
             echo "                    <h2>Aoutch ! No data !</h2>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
+        // line 30
         echo "                </table>
             </section>
         ";
     }
 
-    // line 36
+    // line 35
     public function block_sidebar($context, array $blocks = array())
     {
-        echo "Side Bar";
+        // line 36
+        echo "            <h6>Search messages by Email.</h6>
+            <input type=\"search\" />
+        ";
     }
 
     public function getTemplateName()
@@ -131,6 +130,6 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
 
     public function getDebugInfo()
     {
-        return array (  117 => 36,  111 => 31,  104 => 29,  96 => 26,  92 => 25,  89 => 24,  84 => 23,  76 => 17,  73 => 16,  68 => 37,  66 => 36,  62 => 34,  60 => 16,  57 => 15,  54 => 14,  46 => 9,  42 => 8,  38 => 7,  34 => 5,  31 => 4,);
+        return array (  116 => 36,  113 => 35,  107 => 30,  100 => 28,  92 => 25,  88 => 24,  85 => 23,  80 => 22,  72 => 16,  69 => 15,  64 => 39,  62 => 35,  58 => 33,  56 => 15,  53 => 14,  50 => 13,  42 => 8,  38 => 7,  34 => 5,  31 => 4,);
     }
 }
