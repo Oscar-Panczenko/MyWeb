@@ -14,19 +14,32 @@
     {% endfor %}
 
     <section id="form">
-    <div class="contact-form">
-    <h2>Send me a message</h2>
+        <div class="contact-form">
+            <h2>Send me a message</h2>
 
-    <form action="{{ path('my_web_site_homepage') }}" method="post" {{ form_enctype(form) }} class="contact">
-        {{ form_errors(form) }}
+            <form action="{{ path('my_web_site_homepage') }}" method="post" {{ form_enctype(form) }} class="contact">
+                {{ form_errors(form) }}
 
-        {{ form_row(form.email) }}
-        {{ form_row(form.body) }}
+                {{ form_row(form.email) }}
+                {{ form_row(form.body) }}
 
-        {{ form_rest(form) }}
+                {{ form_rest(form) }}
 
-    <input type="submit" value="Submit" />
-    </form>
-    </div>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
     </section>
+
+    <script>
+        $('form.contact').on('submit', function(e){
+            e.preventDefault();
+
+            var url = $(this).attr('action');
+            var form = $(this).serialize();
+
+            $.post(url, form, function(data){
+                $('body').html(data);
+            });
+        });
+    </script>
 {% endblock %}

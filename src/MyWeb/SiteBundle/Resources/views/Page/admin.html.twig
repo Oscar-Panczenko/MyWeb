@@ -13,36 +13,56 @@
 {%  block content %}
     <section class="main-col">
         {% block body %}
-            <section id="data">
-                <table border="1px" style="width:700px">
-                    <tr>
-                        <th align="center" bgcolor="#CCC">Email</th>
-                        <th align="center" bgcolor="#CCC">Body</th>
-                    </tr>
-                {% for item in object %}
-                    <tr>
-                        <td bgcolor="#ffffff">{{ item.email }}</td>
-                        <td bgcolor="#ffffff">{{ item.body }}</td>
-                    </tr>
-                {% else %}
-                    <h2>Aoutch ! No data !</h2>
-                {% endfor %}
-                </table>
-            </section>
+            <section id="data"></section>
         {% endblock %}
     </section>
     <aside class="sidebar">
         {% block sidebar %}
             <div class="search">
                 <h4>Search messages by Email</h4>
-                <form action="" method="get">
-                    <input type="text" name="keywords" id="search_keywords" />
-                    <input type="submit" value="search" />
+                <form action="{{ path('my_web_site_admin') }}" method="get" id="search_form">
+                    <input type="text" name="keywords" id="search_keywords"/>
                     <div class="help">
-                        Enter an email or just a part of it.
+                        Enter an email or part of it</div>
+                        (min. 3 letters).
                     </div>
                 </form>
             </div>
         {% endblock %}
     </aside>
+    <script>
+        $('#search_keywords').on('keyup change', function(e) {
+            var keywords = $('#search_keywords').val();
+            if (keywords.length >= 3) {
+                var form = $('#search_form').serialize();
+            } else {
+                var form = undefined;
+            }
+
+            var url = "{{ path('my_web_site_search') }}";
+            $.post(url, form, function(data){
+                $('#data').html(data);
+            });
+        });
+
+        $(document).on('click', 'div.pagination span a', function(e){
+            e.preventDefault();
+            var keywords = $('#search_keywords').val();
+            if (keywords.length >= 3) {
+                var form = $('#search_form').serialize();
+            } else {
+                var form = undefined;
+            }
+
+            var url = $(this).attr('href');
+            $.post(url, form, function(data){
+                $('#data').html(data);
+            });
+        });
+
+        var url = "{{ path('my_web_site_search') }}";
+        $.post(url, {}, function(data){
+            $('#data').html(data);
+        })
+    </script>
 {% endblock %}

@@ -64,7 +64,6 @@ class PageController extends Controller
         return $this->render(
             'MyWebSiteBundle:Page:login.html.twig',
             array(
-                // last username entered by the user
                 'last_username' => $session->get(SecurityContext::LAST_USERNAME),
                 'error'         => $error,
             )
@@ -73,16 +72,29 @@ class PageController extends Controller
 
     public function adminAction()
     {
-        $enquiry = $this->getDoctrine()->getRepository('MyWebSiteBundle:Enquiry')->findAll();
+        $paginator = $this->get('knp_paginator');
 
-        if (!$enquiry) {
-            throw $this->createNotFoundException(
-                //'No product found for email: '.$email
-            'No data found'
-            );
-        }
+        $enquiryQuery = $this->getDoctrine()->getRepository('MyWebSiteBundle:Enquiry')->searchForEmail('');
 
-        return $this->render('MyWebSiteBundle:Page:admin.html.twig', array('object' =>  $enquiry));
+        $enquiry = $paginator->paginate($enquiryQuery, 1, 5);
+
+        return $this->render('MyWebSiteBundle:Page:admin.html.twig', array('enquiry' =>  $enquiry));
+    }
+
+    public function searchAction()
+    {
+        $paginator = $this->get('knp_paginator');
+
+        $page = $this->getRequest()->get('page', 1);
+        $keyword = $this->getRequest()->get('keywords');
+
+        $enquiryQuery = $this->getDoctrine()->getRepository('MyWebSiteBundle:Enquiry')->searchForEmail($keyword);
+
+        $enquiry = $paginator->paginate($enquiryQuery, $page, 5);
+
+        return $this->render('MyWebSiteBundle:Page:search.html.twig', array('enquiry' =>  $enquiry));
     }
 }
+
+//<a href="{{ path('ens_job_show', { 'id': entity.id }) }}">show</a>
 

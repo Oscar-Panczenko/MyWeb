@@ -14,7 +14,13 @@ my_web_site_admin:
     pattern:  /admin
     defaults: { _controller: MyWebSiteBundle:Page:admin }
     requirements:
-        _method:  GET
+        _method:  GET|POST
+
+my_web_site_search:
+    pattern:  /search
+    defaults: { _controller: MyWebSiteBundle:Page:search }
+    requirements:
+        _method:  GET|POST
 
 my_web_site_login:
     path:     /login

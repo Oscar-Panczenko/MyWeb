@@ -44,6 +44,7 @@ class __TwigTemplate_bad54ac7f38b3dc3f368c0bad23c98adb13f0a13a6b36b51c20bdc968d0
         echo "        <link rel=\"icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/feather.ico"), "html", null, true);
         echo "\" />
+        <script src=\"http://code.jquery.com/jquery-1.11.0.min.js\"></script>
     </head>
     <body>
 
@@ -51,38 +52,38 @@ class __TwigTemplate_bad54ac7f38b3dc3f368c0bad23c98adb13f0a13a6b36b51c20bdc968d0
             <header id=\"header\">
                 <div class=\"top\">
                     ";
-        // line 22
+        // line 23
         $this->displayBlock('navigation', $context, $blocks);
-        // line 30
+        // line 31
         echo "                </div>
             </header>
 
             <section id=\"front\">
             <hgroup>
                 ";
-        // line 35
-        $this->displayBlock('front_line', $context, $blocks);
         // line 36
+        $this->displayBlock('front_line', $context, $blocks);
+        // line 37
         echo "            </hgroup>
             </section>
 
             ";
-        // line 39
+        // line 40
         $this->displayBlock('content', $context, $blocks);
-        // line 43
+        // line 44
         echo "
             <div id=\"footer\">
                 ";
-        // line 45
+        // line 46
         $this->displayBlock('footer', $context, $blocks);
-        // line 48
+        // line 49
         echo "            </div>
         </section>
 
         ";
-        // line 51
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 52
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 53
         echo "    </body>
 </html>
 ";
@@ -107,18 +108,18 @@ class __TwigTemplate_bad54ac7f38b3dc3f368c0bad23c98adb13f0a13a6b36b51c20bdc968d0
         ";
     }
 
-    // line 22
+    // line 23
     public function block_navigation($context, array $blocks = array())
     {
-        // line 23
+        // line 24
         echo "                        <nav>
                             <ul class=\"navigation\">
                                 <li><a href=\"";
-        // line 25
+        // line 26
         echo $this->env->getExtension('routing')->getPath("my_web_site_admin");
         echo "\">Admin</a></li>
 \t\t\t\t                <li><a href=\"";
-        // line 26
+        // line 27
         echo $this->env->getExtension('routing')->getPath("my_web_site_login");
         echo "\">Login</a></li>
                             </ul>
@@ -126,46 +127,46 @@ class __TwigTemplate_bad54ac7f38b3dc3f368c0bad23c98adb13f0a13a6b36b51c20bdc968d0
                     ";
     }
 
-    // line 35
+    // line 36
     public function block_front_line($context, array $blocks = array())
     {
-        echo "<h2>MY <a href=\"";
+        echo "<h2><a href=\"";
         echo $this->env->getExtension('routing')->getPath("my_web_site_homepage");
-        echo "\">DEMO SITE.</a></h2>";
-    }
-
-    // line 39
-    public function block_content($context, array $blocks = array())
-    {
-        // line 40
-        echo "            ";
-        $this->displayBlock('body', $context, $blocks);
-        // line 41
-        echo "            ";
-        $this->displayBlock('sidebar', $context, $blocks);
-        // line 42
-        echo "            ";
+        echo "\">MY DEMO SITE</a></h2>";
     }
 
     // line 40
+    public function block_content($context, array $blocks = array())
+    {
+        // line 41
+        echo "            ";
+        $this->displayBlock('body', $context, $blocks);
+        // line 42
+        echo "            ";
+        $this->displayBlock('sidebar', $context, $blocks);
+        // line 43
+        echo "            ";
+    }
+
+    // line 41
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 41
+    // line 42
     public function block_sidebar($context, array $blocks = array())
     {
     }
 
-    // line 45
+    // line 46
     public function block_footer($context, array $blocks = array())
     {
-        // line 46
+        // line 47
         echo "                   Created by Oscar Hernandez
                 ";
     }
 
-    // line 51
+    // line 52
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -182,6 +183,6 @@ class __TwigTemplate_bad54ac7f38b3dc3f368c0bad23c98adb13f0a13a6b36b51c20bdc968d0
 
     public function getDebugInfo()
     {
-        return array (  169 => 51,  164 => 46,  161 => 45,  156 => 41,  151 => 40,  147 => 42,  144 => 41,  141 => 40,  138 => 39,  130 => 35,  122 => 26,  118 => 25,  114 => 23,  111 => 22,  105 => 13,  101 => 11,  98 => 10,  92 => 6,  86 => 52,  84 => 51,  79 => 48,  77 => 45,  73 => 43,  71 => 39,  66 => 36,  64 => 35,  57 => 30,  55 => 22,  44 => 15,  42 => 10,  35 => 6,  28 => 1,);
+        return array (  170 => 52,  165 => 47,  162 => 46,  157 => 42,  152 => 41,  148 => 43,  145 => 42,  142 => 41,  139 => 40,  131 => 36,  123 => 27,  119 => 26,  115 => 24,  112 => 23,  106 => 13,  102 => 11,  99 => 10,  93 => 6,  85 => 52,  80 => 49,  74 => 44,  72 => 40,  65 => 36,  58 => 31,  56 => 23,  42 => 10,  35 => 6,  28 => 1,  43 => 9,  37 => 6,  87 => 53,  82 => 24,  78 => 46,  73 => 21,  67 => 37,  60 => 15,  51 => 12,  48 => 11,  44 => 15,  41 => 9,  38 => 8,  32 => 5,  29 => 4,);
     }
 }

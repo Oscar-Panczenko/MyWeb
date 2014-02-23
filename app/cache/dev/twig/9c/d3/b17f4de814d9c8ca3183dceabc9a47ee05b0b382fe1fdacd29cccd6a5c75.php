@@ -59,38 +59,51 @@ class __TwigTemplate_9cd3b17f4de814d9c8ca3183dceabc9a47ee05b0b382fe1fdacd29cccd6
         // line 15
         echo "
     <section id=\"form\">
-    <div class=\"contact-form\">
-    <h2>Send me a message</h2>
+        <div class=\"contact-form\">
+            <h2>Send me a message</h2>
 
-    <form action=\"";
+            <form action=\"";
         // line 20
         echo $this->env->getExtension('routing')->getPath("my_web_site_homepage");
         echo "\" method=\"post\" ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo " class=\"contact\">
-        ";
+                ";
         // line 21
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
         echo "
 
-        ";
+                ";
         // line 23
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email"), 'row');
         echo "
-        ";
+                ";
         // line 24
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "body"), 'row');
         echo "
 
-        ";
+                ";
         // line 26
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
         echo "
 
-    <input type=\"submit\" value=\"Submit\" />
-    </form>
-    </div>
+                <input type=\"submit\" value=\"Submit\" />
+            </form>
+        </div>
     </section>
+
+    <script>
+        \$('form.contact').on('submit', function(e){
+            e.preventDefault();
+
+            var url = \$(this).attr('action');
+            var form = \$(this).serialize();
+
+            \$.post(url, form, function(data){
+                \$('body').html(data);
+            });
+        });
+    </script>
 ";
     }
 

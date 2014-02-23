@@ -13,6 +13,7 @@
             <link href="{{ asset('css/screen.css') }}" type="text/css" rel="stylesheet" />
         {% endblock %}
         <link rel="icon" href="{{ asset('images/feather.ico') }}" />
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     </head>
     <body>
 
@@ -32,7 +33,7 @@
 
             <section id="front">
             <hgroup>
-                {% block front_line %}<h2>MY <a href="{{ path('my_web_site_homepage') }}">DEMO SITE.</a></h2>{% endblock %}
+                {% block front_line %}<h2><a href="{{ path('my_web_site_homepage') }}">MY DEMO SITE</a></h2>{% endblock %}
             </hgroup>
             </section>
 

@@ -54,14 +54,55 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
         ";
         // line 15
         $this->displayBlock('body', $context, $blocks);
-        // line 33
+        // line 18
         echo "    </section>
     <aside class=\"sidebar\">
         ";
-        // line 35
+        // line 20
         $this->displayBlock('sidebar', $context, $blocks);
-        // line 47
+        // line 32
         echo "    </aside>
+    <script>
+        \$('#search_keywords').on('keyup change', function(e) {
+            var keywords = \$('#search_keywords').val();
+            if (keywords.length >= 3) {
+                var form = \$('#search_form').serialize();
+            } else {
+                var form = undefined;
+            }
+
+            var url = \"";
+        // line 42
+        echo $this->env->getExtension('routing')->getPath("my_web_site_search");
+        echo "\";
+            \$.post(url, form, function(data){
+                \$('#data').html(data);
+            });
+        });
+
+        \$(document).on('click', 'div.pagination span a', function(e){
+            e.preventDefault();
+            var keywords = \$('#search_keywords').val();
+            if (keywords.length >= 3) {
+                var form = \$('#search_form').serialize();
+            } else {
+                var form = undefined;
+            }
+
+            var url = \$(this).attr('href');
+            \$.post(url, form, function(data){
+                \$('#data').html(data);
+            });
+        });
+
+        var url = \"";
+        // line 63
+        echo $this->env->getExtension('routing')->getPath("my_web_site_search");
+        echo "\";
+        \$.post(url, {}, function(data){
+            \$('#data').html(data);
+        })
+    </script>
 ";
     }
 
@@ -69,54 +110,21 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
     public function block_body($context, array $blocks = array())
     {
         // line 16
-        echo "            <section id=\"data\">
-                <table border=\"1px\" style=\"width:700px\">
-                    <tr>
-                        <th align=\"center\" bgcolor=\"#CCC\">Email</th>
-                        <th align=\"center\" bgcolor=\"#CCC\">Body</th>
-                    </tr>
-                ";
-        // line 22
-        $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["object"]) ? $context["object"] : $this->getContext($context, "object")));
-        $context['_iterated'] = false;
-        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 23
-            echo "                    <tr>
-                        <td bgcolor=\"#ffffff\">";
-            // line 24
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "email"), "html", null, true);
-            echo "</td>
-                        <td bgcolor=\"#ffffff\">";
-            // line 25
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "body"), "html", null, true);
-            echo "</td>
-                    </tr>
-                ";
-            $context['_iterated'] = true;
-        }
-        if (!$context['_iterated']) {
-            // line 28
-            echo "                    <h2>Aoutch ! No data !</h2>
-                ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
-        echo "                </table>
-            </section>
+        echo "            <section id=\"data\"></section>
         ";
     }
 
-    // line 35
+    // line 20
     public function block_sidebar($context, array $blocks = array())
     {
-        // line 36
+        // line 21
         echo "            <div class=\"search\">
                 <h4>Search messages by Email</h4>
-                <form action=\"\" method=\"get\">
-                    <input type=\"text\" name=\"keywords\" id=\"search_keywords\" />
+                <form action=\"";
+        // line 23
+        echo $this->env->getExtension('routing')->getPath("my_web_site_admin");
+        echo "\" method=\"get\" id=\"search_form\">
+                    <input type=\"text\" name=\"keywords\" id=\"search_keywords\"/>
                     <input type=\"submit\" value=\"search\" />
                     <div class=\"help\">
                         Enter an email or just a part of it.
@@ -138,6 +146,6 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
 
     public function getDebugInfo()
     {
-        return array (  116 => 36,  113 => 35,  107 => 30,  100 => 28,  92 => 25,  88 => 24,  85 => 23,  80 => 22,  72 => 16,  69 => 15,  64 => 47,  62 => 35,  58 => 33,  56 => 15,  53 => 14,  50 => 13,  42 => 8,  38 => 7,  34 => 5,  31 => 4,);
+        return array (  125 => 23,  121 => 21,  118 => 20,  113 => 16,  110 => 15,  100 => 63,  76 => 42,  64 => 32,  62 => 20,  58 => 18,  56 => 15,  53 => 14,  50 => 13,  42 => 8,  38 => 7,  34 => 5,  31 => 4,);
     }
 }

@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints\Length;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MyWeb\SiteBundle\Repository\EnquiryRepository")
  */
 
 class Enquiry
