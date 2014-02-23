@@ -60,7 +60,7 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
         ";
         // line 35
         $this->displayBlock('sidebar', $context, $blocks);
-        // line 39
+        // line 47
         echo "    </aside>
 ";
     }
@@ -113,8 +113,16 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
     public function block_sidebar($context, array $blocks = array())
     {
         // line 36
-        echo "            <h6>Search messages by Email.</h6>
-            <input type=\"search\" />
+        echo "            <div class=\"search\">
+                <h4>Search messages by Email</h4>
+                <form action=\"\" method=\"get\">
+                    <input type=\"text\" name=\"keywords\" id=\"search_keywords\" />
+                    <input type=\"submit\" value=\"search\" />
+                    <div class=\"help\">
+                        Enter an email or just a part of it.
+                    </div>
+                </form>
+            </div>
         ";
     }
 
@@ -130,6 +138,6 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
 
     public function getDebugInfo()
     {
-        return array (  116 => 36,  113 => 35,  107 => 30,  100 => 28,  92 => 25,  88 => 24,  85 => 23,  80 => 22,  72 => 16,  69 => 15,  64 => 39,  62 => 35,  58 => 33,  56 => 15,  53 => 14,  50 => 13,  42 => 8,  38 => 7,  34 => 5,  31 => 4,);
+        return array (  116 => 36,  113 => 35,  107 => 30,  100 => 28,  92 => 25,  88 => 24,  85 => 23,  80 => 22,  72 => 16,  69 => 15,  64 => 47,  62 => 35,  58 => 33,  56 => 15,  53 => 14,  50 => 13,  42 => 8,  38 => 7,  34 => 5,  31 => 4,);
     }
 }

@@ -19,7 +19,7 @@ body {background-color: #000100;}
 
 #top {background-color: #CCC}
 #wrapper { margin: 10px auto; width: 1000px; }
-#wrapper a { text-decoration: none; color: #006; }
+#wrapper a { text-decoration: none; color: #000; text-shadow: 0px 0px 4px #fff;}
 #wrapper span.highlight { color: #006; }
 #wrapper h1 { font-family: Arial, Helvetica, sans-serif; font-size: 30px; text-align: center; line-height: 110px; }
 #wrapper h2 { font-family: Arial, Helvetica, sans-serif; font-size: 30px; text-align: center; line-height: 110px; }
@@ -30,8 +30,8 @@ body {background-color: #000100;}
 #header .navigation li { display: inline }
 #header .navigation li a { display: inline-block; padding: 10px 15px; border-left: 1px solid #ccc; }
 
-#front h2 { font-family: calibri, arial, sans-serif; font-size: 45px; text-align: center; line-height: 110px; color: #FFFFCC; text-shadow: 0px 0px 4px #000;}
-#front h2 a { color: #33CCCC; }
+#front h2 { font-family: calibri, arial, sans-serif; font-size: 45px; text-align: center; line-height: 110px; color: #fff; text-shadow: 0px 0px 4px #000;}
+#front h2 a { color: #fff; text-shadow: 0px 0px 4px #000;}
 #front h3 { text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 24px; margin-bottom: 20px; font-weight: normal; }
 #front { border-bottom: 1px solid #ccc; margin-bottom: 20px; }
 
@@ -54,3 +54,8 @@ body {background-color: #000100;}
 .contact-form {color: #FFF;  text-shadow: 0px 0px 6px #000;}
 .contact-form h2 {font-size: 15px;}
 .contact-form form {align-items: center;}
+
+.sidebar {color: #fff;}
+
+#form {align-content: center; text-align: right; margin: 10px auto;}
+#login {align-content: center; text-align: center; margin: auto auto;}

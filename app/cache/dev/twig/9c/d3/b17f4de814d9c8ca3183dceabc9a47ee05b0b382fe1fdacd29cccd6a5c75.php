@@ -58,37 +58,39 @@ class __TwigTemplate_9cd3b17f4de814d9c8ca3183dceabc9a47ee05b0b382fe1fdacd29cccd6
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 15
         echo "
+    <section id=\"form\">
     <div class=\"contact-form\">
     <h2>Send me a message</h2>
 
     <form action=\"";
-        // line 19
+        // line 20
         echo $this->env->getExtension('routing')->getPath("my_web_site_homepage");
         echo "\" method=\"post\" ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo " class=\"contact\">
         ";
-        // line 20
+        // line 21
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
         echo "
 
         ";
-        // line 22
+        // line 23
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email"), 'row');
         echo "
         ";
-        // line 23
+        // line 24
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "body"), 'row');
         echo "
 
         ";
-        // line 25
+        // line 26
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
         echo "
 
-        <input type=\"submit\" value=\"Submit\" />
+    <input type=\"submit\" value=\"Submit\" />
     </form>
     </div>
+    </section>
 ";
     }
 
@@ -104,6 +106,6 @@ class __TwigTemplate_9cd3b17f4de814d9c8ca3183dceabc9a47ee05b0b382fe1fdacd29cccd6
 
     public function getDebugInfo()
     {
-        return array (  86 => 25,  81 => 23,  77 => 22,  72 => 20,  66 => 19,  60 => 15,  51 => 12,  48 => 11,  44 => 10,  41 => 9,  38 => 8,  32 => 5,  29 => 4,);
+        return array (  87 => 26,  82 => 24,  78 => 23,  73 => 21,  67 => 20,  60 => 15,  51 => 12,  48 => 11,  44 => 10,  41 => 9,  38 => 8,  32 => 5,  29 => 4,);
     }
 }
