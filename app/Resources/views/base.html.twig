@@ -32,7 +32,7 @@
 
             <section id="front">
             <hgroup>
-                <h2>{% block blog_tagline %}Welcome to my Demo Site.{% endblock %}</h3>
+                {% block front_line %}<h2>MY <a href="{{ path('my_web_site_homepage') }}">DEMO SITE.</a></h2>{% endblock %}
             </hgroup>
             </section>
 

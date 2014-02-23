@@ -83,11 +83,11 @@ class __TwigTemplate_6cfcfd25628a3004ab788012bc0175c57792ccd787ec4e04f59b55746b1
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
             // line 23
             echo "                    <tr>
-                        <td>";
+                        <td bgcolor=\"#ffffff\">";
             // line 24
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "email"), "html", null, true);
             echo "</td>
-                        <td>";
+                        <td bgcolor=\"#ffffff\">";
             // line 25
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "body"), "html", null, true);
             echo "</td>

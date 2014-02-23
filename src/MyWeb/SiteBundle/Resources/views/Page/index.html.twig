@@ -6,9 +6,6 @@
 {% endblock %}
 
 {% block body %}
-    <header>
-        <h1>Contact Oscar</h1>
-    </header>
 
     {% for flashMessage in app.session.flashbag.get('contact-notice') %}
         <div class="contact--notice">
@@ -16,7 +13,8 @@
         </div>
     {% endfor %}
 
-    <p>Send me a message</p>
+    <div class="contact-form">
+    <h2>Send me a message</h2>
 
     <form action="{{ path('my_web_site_homepage') }}" method="post" {{ form_enctype(form) }} class="contact">
         {{ form_errors(form) }}
@@ -28,4 +26,5 @@
 
         <input type="submit" value="Submit" />
     </form>
+    </div>
 {% endblock %}

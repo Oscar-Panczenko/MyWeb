@@ -13,8 +13,7 @@ class __TwigTemplate_bad54ac7f38b3dc3f368c0bad23c98adb13f0a13a6b36b51c20bdc968d0
             'title' => array($this, 'block_title'),
             'stylesheets' => array($this, 'block_stylesheets'),
             'navigation' => array($this, 'block_navigation'),
-            'blog_title' => array($this, 'block_blog_title'),
-            'blog_tagline' => array($this, 'block_blog_tagline'),
+            'front_line' => array($this, 'block_front_line'),
             'content' => array($this, 'block_content'),
             'body' => array($this, 'block_body'),
             'sidebar' => array($this, 'block_sidebar'),
@@ -60,34 +59,30 @@ class __TwigTemplate_bad54ac7f38b3dc3f368c0bad23c98adb13f0a13a6b36b51c20bdc968d0
 
             <section id=\"front\">
             <hgroup>
-                <!--<h2>";
+                ";
         // line 35
-        $this->displayBlock('blog_title', $context, $blocks);
-        echo "</h2>-->
-                <h2>";
+        $this->displayBlock('front_line', $context, $blocks);
         // line 36
-        $this->displayBlock('blog_tagline', $context, $blocks);
-        echo "</h3>
-            </hgroup>
+        echo "            </hgroup>
             </section>
 
             ";
-        // line 40
+        // line 39
         $this->displayBlock('content', $context, $blocks);
-        // line 44
+        // line 43
         echo "
             <div id=\"footer\">
                 ";
-        // line 46
+        // line 45
         $this->displayBlock('footer', $context, $blocks);
-        // line 49
+        // line 48
         echo "            </div>
         </section>
 
         ";
-        // line 52
+        // line 51
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 53
+        // line 52
         echo "    </body>
 </html>
 ";
@@ -132,49 +127,45 @@ class __TwigTemplate_bad54ac7f38b3dc3f368c0bad23c98adb13f0a13a6b36b51c20bdc968d0
     }
 
     // line 35
-    public function block_blog_title($context, array $blocks = array())
+    public function block_front_line($context, array $blocks = array())
     {
-        echo "Engineer+Developer+Designer";
+        echo "<h2>MY <a href=\"";
+        echo $this->env->getExtension('routing')->getPath("my_web_site_homepage");
+        echo "\">DEMO SITE.</a></h2>";
     }
 
-    // line 36
-    public function block_blog_tagline($context, array $blocks = array())
+    // line 39
+    public function block_content($context, array $blocks = array())
     {
-        echo "Welcome to my Demo Site.";
+        // line 40
+        echo "            ";
+        $this->displayBlock('body', $context, $blocks);
+        // line 41
+        echo "            ";
+        $this->displayBlock('sidebar', $context, $blocks);
+        // line 42
+        echo "            ";
     }
 
     // line 40
-    public function block_content($context, array $blocks = array())
-    {
-        // line 41
-        echo "            ";
-        $this->displayBlock('body', $context, $blocks);
-        // line 42
-        echo "            ";
-        $this->displayBlock('sidebar', $context, $blocks);
-        // line 43
-        echo "            ";
-    }
-
-    // line 41
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 42
+    // line 41
     public function block_sidebar($context, array $blocks = array())
     {
     }
 
-    // line 46
+    // line 45
     public function block_footer($context, array $blocks = array())
     {
-        // line 47
+        // line 46
         echo "                   Created by Oscar Hernandez
                 ";
     }
 
-    // line 52
+    // line 51
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -191,6 +182,6 @@ class __TwigTemplate_bad54ac7f38b3dc3f368c0bad23c98adb13f0a13a6b36b51c20bdc968d0
 
     public function getDebugInfo()
     {
-        return array (  178 => 52,  173 => 47,  170 => 46,  165 => 42,  160 => 41,  156 => 43,  153 => 42,  150 => 41,  147 => 40,  141 => 36,  135 => 35,  127 => 26,  123 => 25,  119 => 23,  116 => 22,  110 => 13,  106 => 11,  103 => 10,  97 => 6,  91 => 53,  89 => 52,  84 => 49,  82 => 46,  78 => 44,  76 => 40,  69 => 36,  65 => 35,  58 => 30,  56 => 22,  45 => 15,  43 => 10,  36 => 6,  29 => 1,);
+        return array (  169 => 51,  164 => 46,  161 => 45,  156 => 41,  151 => 40,  147 => 42,  144 => 41,  141 => 40,  138 => 39,  130 => 35,  122 => 26,  118 => 25,  114 => 23,  111 => 22,  105 => 13,  101 => 11,  98 => 10,  92 => 6,  86 => 52,  84 => 51,  79 => 48,  77 => 45,  73 => 43,  71 => 39,  66 => 36,  64 => 35,  57 => 30,  55 => 22,  44 => 15,  42 => 10,  35 => 6,  28 => 1,);
     }
 }
