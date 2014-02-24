@@ -93,14 +93,10 @@ class Enquiry
 
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
-        //$metadata->addPropertyConstraint('name', new NotBlank());
-
         $metadata->addPropertyConstraint('email', new Email(array(
             'message' => 'Please enter a valid Email adress.'
         )));
 
-        //$metadata->addPropertyConstraint('subject', new NotBlank());
-        //$metadata->addPropertyConstraint('subject', new Length(array('max'=>50)));
         $metadata->addPropertyConstraint('body', new Length(array('min'=>10)));
         $metadata->addPropertyConstraint('body', new Length(array('max'=>300)));
     }

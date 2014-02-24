@@ -8,14 +8,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContext;
 use MyWeb\SiteBundle\Entity\Enquiry;
 use MyWeb\SiteBundle\Form\EnquiryType;
-use Symfony\Component\HttpFoundation\Response;
-//use Doctrine\Common\Persistence\ObjectManager;
-//use Doctrine\Common\DataFixtures\AbstractFixture;
-//use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
 class PageController extends Controller
 {
-    public function indexAction(/*Request $req*/)
+    public function indexAction()
     {
         $enquiry = new Enquiry();
         $form = $this->createForm(new EnquiryType(), $enquiry);
@@ -51,7 +47,6 @@ class PageController extends Controller
     {
         $session = $request->getSession();
 
-        // get the login error if there is one
         if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
             $error = $request->attributes->get(
                 SecurityContext::AUTHENTICATION_ERROR
@@ -95,6 +90,4 @@ class PageController extends Controller
         return $this->render('MyWebSiteBundle:Page:search.html.twig', array('enquiry' =>  $enquiry));
     }
 }
-
-//<a href="{{ path('ens_job_show', { 'id': entity.id }) }}">show</a>
 

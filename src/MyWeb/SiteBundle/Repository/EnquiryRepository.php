@@ -12,7 +12,7 @@ class EnquiryRepository extends EntityRepository
         $qb->where(
                 $qb->expr()->like('e.email', ':email')
             )
-            ->setParameter('email',"%$email%")
+            ->setParameter('email', "%$email%")
             ->orderBy('e.email', 'asc');
 
         $query = $qb->getQuery();
